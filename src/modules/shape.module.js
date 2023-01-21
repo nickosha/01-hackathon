@@ -3,8 +3,8 @@ import { generateRandomColor } from '../core/utils'
 import { random } from '..core/utils'
 
 export class ShapeModule extends Module {
-    constructor (type,){
-        super(type)
+    constructor (type, text){
+        super(type, text)
     }
     trigger() {
         const body = document.querySelector('body')
@@ -26,12 +26,7 @@ export class ShapeModule extends Module {
     }
 
     toHTML() {
-        const createShape = document.createElement('li')
-        createShape.classList = 'menu-item'
-        createShape.dataset = `${this.type}`
-        createShape.textContent = 'Создать фигуру'
-
-        return createShape
+        return `<li class="menu-item" data-type="${this.type}">${this.text}</li>`
       }
   
 }
