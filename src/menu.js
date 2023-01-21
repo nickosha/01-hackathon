@@ -16,6 +16,7 @@ export class ContextMenu extends Menu {
         this.el.addEventListener('click', (event) => {
             const {target} = event;
             if (target) {
+
                 const method = target.dataset.type
                 modules[method].trigger()
             }
