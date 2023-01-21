@@ -1,16 +1,10 @@
 import {Module} from '../core/module'
 // Аналитика кликов (за установленное вами время) или Случайный звук
 
-export class Random_soundModule extends Module {
-  // constructor() {
-  //   super()
-  // }
-
+export class RandomSoundModule extends Module {
   trigger() {
-    // super.trigger();
+    console.log('random sound module')
   }
 
-  start() {
-    console.log('rererere')
-  }
+
 }
