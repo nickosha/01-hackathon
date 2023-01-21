@@ -1,4 +1,5 @@
 import { Module } from '../core/module'
+import { random } from '../utils'
 
 export class MessageModule extends Module {
     trigger() {
