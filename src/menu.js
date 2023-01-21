@@ -28,6 +28,6 @@ export class ContextMenu extends Menu {
     }
 
     add() {
-        this.el.innerHTML = backgroundModule.toHTML()
+        this.el.append(backgroundModule.toHTML())  
     }
 }
