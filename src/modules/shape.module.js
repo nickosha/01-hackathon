@@ -1,6 +1,6 @@
 import { Module } from '../core/module'
-import { generateRandomColor } from '../core/utils'
-import { random } from '..core/utils'
+import { generateRandomColor } from '../utils'
+import { random } from '../utils'
 
 export class ShapeModule extends Module {
     constructor (type, text){
@@ -21,8 +21,12 @@ export class ShapeModule extends Module {
         shape.style.left = `${x}px`
         shape.style.borderRadius = `${random(0, 60)}%`
         shape.style.backgroundColor = generateRandomColor()
+        console.log(shape)
         body.append(shape)
-        setTimeout(shape.remove(), 1000)
+        
+        setTimeout(() => {
+            shape.remove()
+        }, 1000)
     }
 
     toHTML() {

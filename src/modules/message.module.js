@@ -4,12 +4,25 @@ import { random } from '../utils'
 export class MessageModule extends Module {
     trigger() {
         if (document.querySelector('.message') === null) {
-            const quotes = ['000', '001', '010', '011', '100', '101', '110', '111']
+
+            async function getQuotes() {
+                try {
+                    const result = await fetch('https://type.fit/api/quotes');
+                    const data = await result.json();
+                
+                    const randomIndex = random(0, data.length - 1);
+                    message.textContent = data[randomIndex].text
+                }
+                catch(ex) {
+                    console.log(ex)
+                }
+            }
             const message = document.createElement('p')
             message.className = 'message'
-            message.textContent = quotes[random(0, quotes.length - 1)]
+            getQuotes()
             document.body.append(message)
-            setTimeout(() => { message.remove() }, 5000)
+
+            setTimeout(() => { message.remove() }, 3000)
         }
     }
 }
