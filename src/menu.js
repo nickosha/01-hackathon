@@ -2,10 +2,12 @@ import {Menu} from './core/menu'
 
 import {BackgroundModule} from './modules/background.module'
 import {ShapeModule} from './modules/shape.module'
+import {MessageModule} from './modules/message.module'
 
 const modules = {}
-modules.backgroundModule = new BackgroundModule('backgroundModule', 'Изменить цвет')
-modules.shape = new ShapeModule('shape', 'Рандомная фигура')
+modules.backgroundModule = new BackgroundModule('backgroundModule', 'Поменять цвет')
+modules.shape = new ShapeModule('shape', 'Создать фигуру')
+modules.showMessage = new MessageModule('showMessage', 'Вызвать сообщение')
 
 export class ContextMenu extends Menu {
     constructor(selector) {
