@@ -15,6 +15,10 @@ export class Module {
   }
 
   toHTML() {
-    return `<li class="menu-item" data-type="${this.type}">${this.text}</li>`
+    const menuItem = document.createElement('li');
+    menuItem.className = 'menu-item';
+    menuItem.dataset.dataType = this.type;
+    menuItem.innerText = this.text;
+    return menuItem;
   }
 }
