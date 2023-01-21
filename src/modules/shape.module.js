@@ -1,9 +1,9 @@
 import {Module} from '../core/module'
 
 export class ShapeModule extends Module {
-    constructor (type, text){
-        super(text)
-    }
+    // constructor (type, text){
+    //     super(text)
+    // }
     // функция для создания рандомного цвета
     #generateRandomColor() {
         const hexCodes = '0123456789ABCDEF'
@@ -16,7 +16,7 @@ export class ShapeModule extends Module {
 
     // функция для создания рандомной фигуры
 
-    createRandomShape(){
+    trigger(){
         const body = document.querySelector('body')
         const shape = document.createElement('div')
         const size = this.#getRandomNumber(10, 100)
@@ -34,6 +34,10 @@ export class ShapeModule extends Module {
         shape.style.backgroundColor = this.#generateRandomColor()
 
         body.append(shape)
+
+        setTimeout(() => {
+            document.body.removeChild(shape)
+        }, 1000)
     }
 
     #getRandomNumber(min, max) {
