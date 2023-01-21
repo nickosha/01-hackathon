@@ -1,8 +1,10 @@
 import {Menu} from './core/menu'
 
-import {BackgroundModule} from './modules/background.module'
+// import {BackgroundModule} from './modules/background.module'
+import {RandomSoundModule} from './modules/randomSound.module'
 
-let backgroundModule = new BackgroundModule('back', 'Изменить цвет')
+// let backgroundModule = new BackgroundModule('back', 'Изменить цвет')
+let randomSoundModule = new RandomSoundModule('sound', 'Случайный звук')
 
 export class ContextMenu extends Menu {
     constructor(selector) {
@@ -11,7 +13,7 @@ export class ContextMenu extends Menu {
         this.el.addEventListener('click', (event) => {
             const {target} = event;
             if (target) {
-                console.log(backgroundModule.trigger())
+                randomSoundModule.trigger()
             }
 
             this.close()
@@ -28,6 +30,7 @@ export class ContextMenu extends Menu {
     }
 
     add() {
-        this.el.innerHTML = backgroundModule.toHTML()
+        // this.el.innerHTML = backgroundModule.toHTML()
+        this.el.innerHTML = randomSoundModule.toHTML()
     }
 }
