@@ -9,7 +9,7 @@ export class Module {
     this.type = type
     this.text = text
   }
-
+  
   trigger() {
     throw new Error(`Trigger method should be implemented in module "${this.type}"`)
   }
