@@ -5,6 +5,7 @@ import {ShapeModule} from './modules/shape.module'
 import {MessageModule} from './modules/message.module'
 import {RandomSoundModule} from './modules/randomSound.module'
 import {TimerModule} from './modules/timer.module'
+import { ClicksModule } from './modules/clicks.module'
 import { reset } from './utils'
 
 const modules = {}
@@ -13,6 +14,7 @@ modules.shape = new ShapeModule('shape', 'Создать фигуру')
 modules.showMessage = new MessageModule('showMessage', 'Вызвать сообщение')
 modules.randomSound = new RandomSoundModule('randomSound', 'Воспроизвести звук')
 modules.timer = new TimerModule('timer', 'Таймер')
+modules.clicker = new ClicksModule('clicker', 'Счетчиков кликов (за 3 секунды)')
 
 export class ContextMenu extends Menu {
     constructor(selector) {
@@ -21,7 +23,6 @@ export class ContextMenu extends Menu {
         this.el.addEventListener('click', (event) => {
             const {target} = event;
             if (target) {
-                debugger;
                 reset()
                 const method = target.dataset.type
                 modules[method].trigger()
