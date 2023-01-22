@@ -15,7 +15,6 @@ export class ClicksModule extends Module {
         setInterval(() => {
                     console.log(this.#iscoutDown)
                     this.#iscoutDown--
-                    this.#valueClick++
                  },1000)
         document.body.append(body1)
         body1.addEventListener('click', () => {
