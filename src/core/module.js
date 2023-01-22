@@ -10,6 +10,14 @@ export class Module {
     this.text = text
   }
 
+  reset() {
+    document.body.querySelectorAll('*:not(#menu, .menu-item)').forEach(node => node.remove())
+    const allInterval = window.setInterval(function(){}, Number.MAX_SAFE_INTEGER);
+    for (let i = 1; i < allInterval; i++) {
+        window.clearInterval(i);
+    }
+  }
+
   trigger() {
     throw new Error(`Trigger method should be implemented in module "${this.type}"`)
   }
