@@ -11,6 +11,19 @@ export class ClicksModule extends Module {
         const body1 = document.createElement('div')
         const spanClick = document.createElement('span')
         spanClick.classname = 'clickClass'
+        spanClick.style.cssText = `
+        color: black;
+        font-size: 30px;
+        color: #343434;
+        border: 2px solid inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px auto;
+        background-color: rgb(158, 152, 152);
+        height: auto;
+        min-width: 300px;
+        `
         body1.className = 'clickbody'
         setInterval(() => {
                     console.log(this.#iscoutDown)
@@ -19,7 +32,7 @@ export class ClicksModule extends Module {
         document.body.append(body1)
         body1.addEventListener('click', () => {
             this.#valueClick++
-            spanClick.textContent = this.#valueClick
+            spanClick.textContent = `количество кликов: ${this.#valueClick}` 
             body1.append(spanClick)
         })
        

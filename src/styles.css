@@ -52,6 +52,8 @@ body {
     color: #343434;
     border: 2px solid inherit;
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 30px auto;
     background-color: rgb(158, 152, 152);
     height: auto;
