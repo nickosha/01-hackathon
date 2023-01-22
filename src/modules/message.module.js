@@ -19,7 +19,7 @@ export class MessageModule extends Module {
             getQuotes()
             document.body.append(message)
             setTimeout(() => message.className += ' hidden', 3000)
-            setTimeout(() => { message.remove() }, 5000)
+            setTimeout(() => { message.remove() }, 4000)
         }
     }
 }
