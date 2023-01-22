@@ -1,7 +1,8 @@
 import {Module} from '../core/module'
 
 export class BackgroundModule extends Module { 
-    #randomColorArr = ['linear-gradient(45deg, blue, red)',
+    #randomColorArr = [
+    'linear-gradient(45deg, blue, red)',
     'radial-gradient(circle, rgba(0,36,20,1) 20%, rgba(125,195,174,1) 74%, rgba(0,212,255,1) 83%, rgba(147,214,214,1) 83%)',
     'linear-gradient(90deg, rgba(255,255,255,1) 21%, rgba(29,53,253,1) 50%, rgba(252,69,69,1) 86%)',
     'skyblue',
