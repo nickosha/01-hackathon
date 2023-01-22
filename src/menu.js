@@ -26,8 +26,8 @@ export class ContextMenu extends Menu {
                 reset()
                 const method = target.dataset.type
                 modules[method].trigger()
+                this.close()
             }
-            this.close()
     }
     
     open(e) {

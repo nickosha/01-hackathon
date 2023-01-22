@@ -13,7 +13,6 @@ export class TimerModule extends Module {
 
     #openInputBlock() {
         this.#inputBlock.className = 'timer-input-block'
-        debugger;
         const closeBtn = document.createElement('div')
         closeBtn.className = 'close-btn'
         closeBtn.onclick = () => {reset()}
@@ -50,7 +49,6 @@ export class TimerModule extends Module {
     }
 
     #createTimerBlock(value) {
-        debugger;
         reset()
 
         if(!value) {

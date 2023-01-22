@@ -3,7 +3,6 @@ export function random(min, max) {
 }
 
 export function updateTimer(time) {
-  debugger
   const daysValue= document.querySelector('#days')
   const hoursValue = document.querySelector('#hours')
   const minutesValue = document.querySelector('#minutes')
