@@ -1,25 +1,38 @@
 import {Menu} from './core/menu'
-import { Module } from './core/module';
 
+import { TimerModule } from './modules/timer.module'
 
+const modules = {}
+modules.timer = new TimerModule('timer', 'Таймер')
 
 export class ContextMenu extends Menu {
     constructor(selector) {
-        super(selector)
-    }
+        super(selector);
 
-    open() {
-        window.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            this.el.style.top = `${e.clientY}px`;
-            this.el.style.left = `${e.clientX}px`
-            this.el.classList.add('open')
+        this.el.addEventListener('click', (event) => {
+            const {target} = event;
+            if (target) {
+
+                const method = target.dataset.type
+                modules[method].trigger()
+            }
+            this.close()
         })
     }
+
+    open(e) {
+        this.el.style.top = `${e.clientY}px`
+        this.el.style.left = `${e.clientX}px`
+        this.el.classList.add('open')
+    }
+    
     close() {
         this.el.classList.remove('open')
     }
-    add(obj) { 
-        this.el.insertAdjacentHTML('beforeend', obj.toHTML())
+
+    add() {
+        for (let key in modules) {
+            this.el.insertAdjacentHTML('beforeEnd', modules[key].toHTML())
+        }
     }
 }
