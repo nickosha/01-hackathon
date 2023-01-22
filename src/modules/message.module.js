@@ -8,7 +8,6 @@ export class MessageModule extends Module {
                 try {
                     const result = await fetch('https://type.fit/api/quotes');
                     const data = await result.json();
-                    console.log(result);
                     const randomIndex = random(0, data.length - 1);
                     message.textContent = data[randomIndex].text
                 } catch (error) {
