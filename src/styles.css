@@ -17,11 +17,14 @@ body {
 .menu {
     position: absolute;
     z-index: 1000;
-    width: 150px;
+    min-width: 150px;
     background: #1b1a1a;
     border-radius: 5px;
     display: none;
     list-style: none;
+    box-shadow: 0 0 20px rgb(71, 68, 68);
+    border-radius: 1px solid rgb(111, 107, 107);
+    padding: 10px;
 }
 
 .menu.open {
@@ -29,14 +32,16 @@ body {
 }
 
 .menu .menu-item {
+    max-width: max-content;
     padding: 8px 10px;
     font-size: 1rem;
     color: #eee;
     cursor: pointer;
-    transition: background-color .2s ease-in;
+    transition: background-color,transform .2s ease-in;
     border-radius: inherit;
 }
 
 .menu .menu-item:hover {
     background: #343434;
+    transform: scale(1.1);
 }
