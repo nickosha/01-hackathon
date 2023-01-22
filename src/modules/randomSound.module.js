@@ -4,7 +4,6 @@ import sound from '../misc/The Prodigy - Smack My Bitch Up.mp3'
 
 export class RandomSoundModule extends Module {
   trigger() {
-    console.log('random sound module')
     const { audio, soundLogo} = this.addAudioToBody()
     this.preparation(audio, soundLogo)
     audio.play()
