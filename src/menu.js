@@ -3,11 +3,13 @@ import {Menu} from './core/menu'
 import {BackgroundModule} from './modules/background.module'
 import {ShapeModule} from './modules/shape.module'
 import {MessageModule} from './modules/message.module'
+import {RandomSoundModule} from './modules/randomSound.module'
 
 const modules = {}
 modules.backgroundModule = new BackgroundModule('backgroundModule', 'Поменять цвет')
 modules.shape = new ShapeModule('shape', 'Создать фигуру')
 modules.showMessage = new MessageModule('showMessage', 'Вызвать сообщение')
+modules.randomSound = new RandomSoundModule('randomSound', 'Воспроизвести звук')
 
 export class ContextMenu extends Menu {
     constructor(selector) {
@@ -16,6 +18,7 @@ export class ContextMenu extends Menu {
         this.el.addEventListener('click', (event) => {
             const {target} = event;
             if (target) {
+
                 const method = target.dataset.type
                 modules[method].trigger()
             }
