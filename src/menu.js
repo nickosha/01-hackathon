@@ -18,19 +18,20 @@ export class ContextMenu extends Menu {
     constructor(selector) {
         super(selector);
 
-        this.el.addEventListener('click', (event) => {
-            const {target} = event;
+    }
+
+    listener(event) {
+        const {target} = event;
             if (target) {
-                debugger;
                 reset()
                 const method = target.dataset.type
                 modules[method].trigger()
             }
             this.close()
-        })
     }
-
+    
     open(e) {
+        this.el.addEventListener('click', this.listener)
         this.el.style.top = `${e.clientY}px`
         this.el.style.left = `${e.clientX}px`
         this.el.classList.add('open')
@@ -38,6 +39,7 @@ export class ContextMenu extends Menu {
     
     close() {
         this.el.classList.remove('open')
+        this.el.removeEventListener('click', this.listener)
     }
 
     add() {

@@ -21,7 +21,6 @@ export class ShapeModule extends Module {
         shape.style.left = `${x}px`
         shape.style.borderRadius = `${random(0, 60)}%`
         shape.style.backgroundColor = generateRandomColor()
-        console.log(shape)
         body.append(shape)
         
         setTimeout(() => {
