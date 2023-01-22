@@ -4,12 +4,14 @@ import {BackgroundModule} from './modules/background.module'
 import {ShapeModule} from './modules/shape.module'
 import {MessageModule} from './modules/message.module'
 import {RandomSoundModule} from './modules/randomSound.module'
+import { ClicksModule } from './modules/clicks.module'
 
 const modules = {}
 modules.backgroundModule = new BackgroundModule('backgroundModule', 'Поменять цвет')
 modules.shape = new ShapeModule('shape', 'Создать фигуру')
 modules.showMessage = new MessageModule('showMessage', 'Вызвать сообщение')
 modules.randomSound = new RandomSoundModule('randomSound', 'Воспроизвести звук')
+modules.clickModules = new ClicksModule('clickModules', 'количество кликов за пять секунд')
 
 export class ContextMenu extends Menu {
     constructor(selector) {
