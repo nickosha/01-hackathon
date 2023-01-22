@@ -12,6 +12,10 @@ export class BackgroundModule extends Module {
     'linear-gradient(0deg, blue, green 40%, red)',
     'linear-gradient(45deg, white 33% 33%, blue 33% 100%, red 0 33%,)',
     'radial-gradient(circle, rgba(197,200,124,1) 35%, rgba(175,33,62,1) 100%)',
+    'linear-gradient(180deg, rgba(255,255,255,1) 23%, rgba(29,53,253,1) 50%, rgba(252,69,69,1) 86%)',
+    'radial-gradient(circle, rgba(255,255,255,1) 11%, rgba(29,53,253,1) 43%, rgba(252,69,69,1) 76%)',
+    'radial-gradient(circle, rgba(219,231,10,1) 11%, rgba(253,84,29,1) 43%, rgba(252,69,69,1) 76%, rgba(42,29,29,1) 92%)',
+    'radial-gradient(circle, rgba(219,231,10,1) 9%, rgba(253,84,29,1) 40%, rgba(252,69,69,1) 78%, rgba(42,29,29,1) 95%)'
 ]
     constructor(type, text) {
         super(type,text)
