@@ -1,4 +1,4 @@
-import {Module} from '@/core/module'
+import {Module} from '../core/module'
 import sound from '../misc/The Prodigy - Smack My Bitch Up.mp3'
 // https://youtu.be/6prlWtOBIX8
 
