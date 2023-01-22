@@ -1,5 +1,5 @@
 import {Module} from '../core/module'
-import { updateTimer } from '../utils';
+import { updateTimer, reset } from '../utils';
 
 export class TimerModule extends Module {
     #inputBlock;
@@ -13,10 +13,10 @@ export class TimerModule extends Module {
 
     #openInputBlock() {
         this.#inputBlock.className = 'timer-input-block'
-
+        debugger;
         const closeBtn = document.createElement('div')
         closeBtn.className = 'close-btn'
-        closeBtn.onclick = () => {this.reset()}
+        closeBtn.onclick = () => {reset()}
 
         this.#inputBlock.append(closeBtn)
 
@@ -51,7 +51,7 @@ export class TimerModule extends Module {
 
     #createTimerBlock(value) {
         debugger;
-        this.reset()
+        reset()
 
         if(!value) {
             alert('Таймер не был запущен, так как не было указано время')
@@ -129,17 +129,13 @@ export class TimerModule extends Module {
                 updateTimer(time)
                 if(time === 0) {
                     clearInterval(interval)
-                    this.reset()
+                    reset()
                 }
             }, 1000)
         }
     }
     trigger() {
-        const timer = document.querySelector(`[data-type="${this.type}"]`)
-        timer.addEventListener('click', () => {
-            this.reset()
             this.#openInputBlock()
-        })
     }
     toHTML() {
         return `<li class="menu-item" data-type="${this.type}">${this.text}</li>`

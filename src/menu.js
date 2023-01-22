@@ -5,6 +5,7 @@ import {ShapeModule} from './modules/shape.module'
 import {MessageModule} from './modules/message.module'
 import {RandomSoundModule} from './modules/randomSound.module'
 import {TimerModule} from './modules/timer.module'
+import { reset } from './utils'
 
 const modules = {}
 modules.backgroundModule = new BackgroundModule('backgroundModule', 'Поменять цвет')
@@ -20,7 +21,8 @@ export class ContextMenu extends Menu {
         this.el.addEventListener('click', (event) => {
             const {target} = event;
             if (target) {
-
+                debugger;
+                reset()
                 const method = target.dataset.type
                 modules[method].trigger()
             }

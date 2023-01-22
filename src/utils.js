@@ -65,6 +65,14 @@ export function updateTimer(time) {
   secondsText.innerHTML = secondsArr[secondsForm]
 }
 
+export function reset() {
+  document.body.querySelectorAll('*:not(#menu, .menu-item)').forEach(node => node.remove())
+  const allInterval = window.setInterval(function(){}, Number.MAX_SAFE_INTEGER);
+  for (let i = 1; i < allInterval; i++) {
+      window.clearInterval(i);
+  }
+}
+
  // функция для создания рандомного цвета
 export function generateRandomColor() {
   const hexCodes = '0123456789ABCDEF'
